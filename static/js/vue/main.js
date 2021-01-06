@@ -2,8 +2,8 @@ import store from './store/index.js'
 import routes from './routes.js'
 
 
-export const app = new Vue({
-	el: '#app',
+export const comments = new Vue({
+	el: '#comments',
 	router: new VueRouter({ routes }),
 	vuetify: new Vuetify(),
 	store,
@@ -31,7 +31,8 @@ export const app = new Vue({
     <v-content class="mx-4 mb-4">
       <router-view></router-view>
     </v-content>
-  </v-app>`
+  </v-app>
+`
 })
 
-console.log('Main is here!')
+console.log('Main for comments is here!')

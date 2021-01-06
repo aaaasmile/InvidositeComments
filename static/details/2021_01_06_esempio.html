@@ -13,6 +13,18 @@
     <link rel="stylesheet" href="../slicknav/slicknav.min.css" />
     <script src="../slicknav/jquery-2.1.1.min.js"></script>
     <script src="../slicknav/jquery.slicknav.min.js"></script>
+    <!-- Inserted vue stuff begin -->
+    <link href="../js/ext/fontcss.css" rel="stylesheet">
+    <link href="../js/ext/vuetify.min.css" rel="stylesheet">
+    <link href="../js/ext/icon.css" rel="stylesheet">
+    <link href="../js/ext/materialdesignicons.min.css" rel="stylesheet">
+    <script src="../js/ext/vue.js"></script>
+    <script src="../js/ext/vue-resource.js"></script>
+    <script src="../js/ext/vuetify.js"></script>
+    <script src="../js/ext/vue-router.js"></script>
+    <script src="../js/ext/vuex.js"></script>
+    <!-- Inserted vue stuff end -->
+
     <link rel="stylesheet" href="../default.css" type="text/css" media="screen" />
     <title>Home</title>
     <meta name=viewport content="width=device-width, initial-scale=1">
@@ -61,6 +73,9 @@
           prependTo: '#menu_toggle'
         });
       });
+    </script>
+    <script type="module">
+      import { comments } from '../js/vue/main.js'
     </script>
   </body>          
 </html>
