@@ -21,7 +21,10 @@ export const comments = new Vue({
 		})
 	},
 	created() {
-		
+		const div1 = document.getElementById('comments');
+		const postId = div1.getAttribute('data-postid');
+		console.log('Comments for the post id', postId)
+		this.$store.commit('setPostId', postId)
 	},
 	methods: {
 
