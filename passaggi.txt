@@ -1,0 +1,9 @@
+# InvidositeComments
+Sistema per aggiungere commennti al sito invido.it
+
+## Scopo
+Quello di avere un backend per i commenti in una pagina di un post di invido.it
+Dovrebbero apparire in fondo alle pagine della directory details.
+L'intenzione è quella di avere un'applicazione vuetify che mi carica i commenti 
+e permette di scriverne di nuovi.
+Vediamo se rieco a farci saltare fuori qualcosa di interessante.
