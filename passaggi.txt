@@ -7,3 +7,6 @@ Dovrebbero apparire in fondo alle pagine della directory details.
 L'intenzione è quella di avere un'applicazione vuetify che mi carica i commenti 
 e permette di scriverne di nuovi.
 Vediamo se rieco a farci saltare fuori qualcosa di interessante.
+
+## Target
+Il target backend.invido.it registrato sul dns, ma non attivo sul sito.

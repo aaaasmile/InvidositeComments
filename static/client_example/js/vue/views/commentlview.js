@@ -12,6 +12,15 @@ export default {
       Comments: state => {
         return state.cs.comments
       },
+      NumComment: state => {
+        return state.cs.tot_comments
+      },
+      TitleCommenti: state => {
+        if (state.cs.tot_comments === 1){
+          return "Commento"
+        }
+        return "Commenti"
+      },
     })
   },
   methods: {
@@ -20,9 +29,21 @@ export default {
     },
   },
   template: `
-  <v-row justify="center">
-    <v-col xs="12" sm="12" md="10" lg="8" xl="6">
-      Comments
-    </v-col>
-  </v-row>`
+  <v-card class="mx-auto">
+    <v-card-title>{{NumComment}} {{TitleCommenti}}</v-card-title>
+    <v-container>
+      <v-list two-line>
+        <v-list-item v-for="item in Comments" :key="item.id">
+          <v-list-item-avatar>
+            <v-img :src="item.avatar"></v-img>
+          </v-list-item-avatar>
+          <v-list-item-content> 
+            <v-list-item-title v-html="item.user"></v-list-item-title>
+            <v-list-item-subtitle v-html="item.content"></v-list-item-subtitle>
+          </v-list-item-content>
+        </v-list-item>
+      </v-list>
+    </v-container>
+  </v-card>
+`
 }
