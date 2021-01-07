@@ -5,6 +5,8 @@ export default {
     return {
       loading: false,
       new_comment: '',
+      user_name: '',
+      email: '',
       dialogSubmit: true,
     }
   },
@@ -38,12 +40,26 @@ export default {
         label="Commenta pubblicamente"
       ></v-text-field>
       <v-card flat v-if="dialogSubmit">
+        <v-container>
+          <v-row justify="space-around">
+            <v-text-field label="Utente*" v-model="user_name"></v-text-field>
+            <v-text-field label="Email*" v-model="email"></v-text-field>
+          </v-row>
+          <v-row justify="space-around">
+            Il codice html non è ammesso e il commento è soggetto a moderazione.
+            I campi Email e Utente sono obbligatori. La Email viene usata per il logo (gravatar). L'Utente per indentificare il commento.
+            I dati non vengono ceduti in nessun modo a terzi. Mai. Altrimenti tenevo il mio account su facebook, che facevo molto prima. 
+            Vedi <a href="https://github.com/aaaasmile/InvidositeComments" target="_blank">sorgenti su github</a>
+          </v-row>
+        </v-container>
         <v-card-actions>
           <v-spacer></v-spacer>
           <v-btn color="grey darken-1" text @click="dialogSubmit = false"
             >Annulla</v-btn
           >
-          <v-btn color="grey lighten-3" depressed  @click="addComment">Commenta</v-btn>
+          <v-btn color="grey lighten-3" depressed @click="addComment"
+            >Commenta</v-btn
+          >
         </v-card-actions>
       </v-card>
       <v-list two-line>
