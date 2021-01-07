@@ -32,14 +32,9 @@ export default {
   <v-card class="mx-auto">
     <v-card-title>{{ NumComment }} {{ TitleCommenti }}</v-card-title>
     <v-container>
-      <v-list three-line>
-        <template v-for="(item, index) in Comments">
-          <v-divider
-            v-if="item.divider"
-            :key="index"
-            :inset="item.inset"
-          ></v-divider>
-          <v-list-item v-else :key="item.id">
+      <v-list two-line>
+        <template v-for="(item) in Comments">
+          <v-list-item :key="item.id">
             <v-list-item-avatar>
               <v-img :src="item.avatar"></v-img>
             </v-list-item-avatar>
@@ -48,7 +43,7 @@ export default {
               <v-list-item-subtitle
                 v-html="item.content"
               ></v-list-item-subtitle>
-              <v-expansion-panels :flat="true">
+              <v-expansion-panels v-if="item.has_children" :flat="true">
                 <v-expansion-panel>
                   <v-expansion-panel-header>1 Risposta</v-expansion-panel-header>
                   <v-expansion-panel-content> </v-expansion-panel-content>
