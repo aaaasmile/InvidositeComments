@@ -2,6 +2,7 @@
 export default {
     state: {
         post_id: 42,
+        posting_is_disabled: false,
         tot_comments: 3,
         comments: [
             { content: 'This is a blog comment 1', num_of_children: 0, user: 'Gianni', avatar: 'https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50', post_id: 42, parent_id: 0, id: 20 },
@@ -16,9 +17,13 @@ export default {
         ],
     },
     mutations: {
-        setPostId(state, id) {
-            console.log('Set the post id to', id)
-            state.post_id = id
+        setPostProp(state, val) {
+            console.log('Set the post properties', val)
+            if(!val){
+              return
+            }
+            state.post_id = val.id 
+            state.posting_is_disabled = val.disablePosting
         }
     }
 }

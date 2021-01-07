@@ -10,3 +10,9 @@ Vediamo se rieco a farci saltare fuori qualcosa di interessante.
 
 ## Target
 Il target backend.invido.it registrato sul dns, ma non attivo sul sito.
+
+## Attiva disattiva e setta i commenti
+Nella pagina statica si può inserire questo tag:
+<div id="comments" data-postid="42" data-diablepost="1"></div>
+data-postid è il post per il quale vengono caricati i commenti
+data-diablepost è opzionale e permette di disablitare i commenti in scrittura (readonly).

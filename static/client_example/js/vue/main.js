@@ -23,8 +23,9 @@ export const comments = new Vue({
 	created() {
 		const div1 = document.getElementById('comments');
 		const postId = div1.getAttribute('data-postid');
-		console.log('Comments for the post id', postId)
-		this.$store.commit('setPostId', postId)
+		const disablepost = div1.getAttribute('data-diablepost');
+		console.log('Comments for the post id', postId, disablepost)
+		this.$store.commit('setPostProp', {id: postId, disablePosting: disablepost})
 	},
 	methods: {
 

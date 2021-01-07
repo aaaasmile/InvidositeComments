@@ -4,6 +4,7 @@
     <v-container>
       <v-text-field
         v-model="new_comment"
+        :disabled="PostingIsDisabled"
         label="Commenta pubblicamente"
         @focus.enter="enterOnFocus"
       ></v-text-field>
@@ -16,9 +17,15 @@
           </v-row>
           <v-row justify="space-around">
             Il codice html non è ammesso e il commento è soggetto a moderazione.
-            I campi Email e Utente sono obbligatori. La Email viene usata per il logo (gravatar). L'Utente per indentificare il commento.
-            I dati non vengono ceduti in nessun modo a terzi. Mai. Altrimenti tenevo il mio account su facebook, che facevo molto prima. 
-            Vedi <a href="https://github.com/aaaasmile/InvidositeComments" target="_blank">sorgenti su github</a>
+            I campi Email e Utente sono obbligatori. La Email viene usata per il
+            logo (gravatar). L'Utente per indentificare il commento. I dati non
+            vengono ceduti in nessun modo a terzi. Mai. Altrimenti tenevo il mio
+            account su facebook, che facevo molto prima. Vedi
+            <a
+              href="https://github.com/aaaasmile/InvidositeComments"
+              target="_blank"
+              >sorgenti su github</a
+            >
           </v-row>
         </v-container>
         <v-card-actions>
