@@ -21,11 +21,16 @@ export const comments = new Vue({
 		})
 	},
 	created() {
-		const div1 = document.getElementById('comments');
-		const postId = div1.getAttribute('data-postid');
-		const disablepost = div1.getAttribute('data-diablepost');
+		const divRoot = document.getElementById('comments');
+		if(!divRoot){
+			console.log('No comments at all enabled for this post')
+			return
+		}
+		const postId = divRoot.getAttribute('data-postid');
+		const disablepost = divRoot.getAttribute('data-diablepost');
 		console.log('Comments for the post id', postId, disablepost)
 		this.$store.commit('setPostProp', {id: postId, disablePosting: disablepost})
+		console.log('Main for comments is here!')
 	},
 	methods: {
 
@@ -39,4 +44,3 @@ export const comments = new Vue({
 `
 })
 
-console.log('Main for comments is here!')

@@ -10,6 +10,9 @@ export default {
       dialogSubmit: false,
     }
   },
+  created() {
+    console.log('Comment view is created')
+  },
   computed: {
     ...Vuex.mapState({
       Comments: state => {
