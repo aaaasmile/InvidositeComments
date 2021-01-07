@@ -5,7 +5,9 @@
       <v-text-field
         v-model="new_comment"
         label="Commenta pubblicamente"
+        @focus.enter="enterOnFocus"
       ></v-text-field>
+
       <v-card flat v-if="dialogSubmit">
         <v-container>
           <v-row justify="space-around">
@@ -29,6 +31,7 @@
           >
         </v-card-actions>
       </v-card>
+
       <v-list two-line>
         <template v-for="item in Comments">
           <v-list-item :key="item.id">

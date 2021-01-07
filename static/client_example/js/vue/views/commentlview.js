@@ -7,7 +7,7 @@ export default {
       new_comment: '',
       user_name: '',
       email: '',
-      dialogSubmit: true,
+      dialogSubmit: false,
     }
   },
   computed: {
@@ -30,6 +30,10 @@ export default {
     addComment(){
       console.log('add comment')
     },
+    enterOnFocus(){
+      console.log('Textfield enter on focus')
+      this.dialogSubmit = true
+    }
   },
   template: `
   <v-card class="mx-auto">
@@ -38,7 +42,9 @@ export default {
       <v-text-field
         v-model="new_comment"
         label="Commenta pubblicamente"
+        @focus.enter="enterOnFocus"
       ></v-text-field>
+
       <v-card flat v-if="dialogSubmit">
         <v-container>
           <v-row justify="space-around">
@@ -62,6 +68,7 @@ export default {
           >
         </v-card-actions>
       </v-card>
+
       <v-list two-line>
         <template v-for="item in Comments">
           <v-list-item :key="item.id">
