@@ -4,7 +4,8 @@ export default {
   data() {
     return {
       loading: false,
-    
+      new_comment: '',
+      dialogSubmit: true,
     }
   },
   computed: {
@@ -32,6 +33,19 @@ export default {
   <v-card class="mx-auto">
     <v-card-title>{{ NumComment }} {{ TitleCommenti }}</v-card-title>
     <v-container>
+      <v-text-field
+        v-model="new_comment"
+        label="Commenta pubblicamente"
+      ></v-text-field>
+      <v-card flat v-if="dialogSubmit">
+        <v-card-actions>
+          <v-spacer></v-spacer>
+          <v-btn color="grey darken-1" text @click="dialogSubmit = false"
+            >Annulla</v-btn
+          >
+          <v-btn color="grey lighten-3" depressed  @click="addComment">Commenta</v-btn>
+        </v-card-actions>
+      </v-card>
       <v-list two-line>
         <template v-for="item in Comments">
           <v-list-item :key="item.id">
