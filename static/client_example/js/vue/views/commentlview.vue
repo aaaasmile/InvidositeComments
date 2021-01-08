@@ -20,7 +20,7 @@
             I campi Email e Utente sono obbligatori. La Email viene usata per il
             logo (gravatar). L'Utente per indentificare il commento. I dati non
             vengono ceduti in nessun modo a terzi. Mai. Altrimenti tenevo il mio
-            account su facebook, che facevo molto prima. Vedi
+            account su twitter, che facevo molto prima. Vedi
             <a
               href="https://github.com/aaaasmile/InvidositeComments"
               target="_blank"
