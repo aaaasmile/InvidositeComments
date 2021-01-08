@@ -12,7 +12,7 @@ const handleError = (error, that) => {
 export default {
 	SubmitComment(that, req) {
 		console.log('Request is ', req)
-		that.$http.post("AddPostComment", JSON.stringify(req), { headers: { "content-type": "application/json" } }).then(result => {
+		that.$http.post("Postdata", JSON.stringify(req), { headers: { "content-type": "application/json" } }).then(result => {
 			console.log('Call result ', result.data)
 			that.loading = false
 		}, error => {

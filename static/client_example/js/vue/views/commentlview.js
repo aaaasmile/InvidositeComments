@@ -22,7 +22,7 @@ export default {
         return state.cs.tot_comments
       },
       TitleCommenti: state => {
-        if (state.cs.tot_comments === 1){
+        if (state.cs.tot_comments === 1) {
           return "Commento"
         }
         return "Commenti"
@@ -33,10 +33,12 @@ export default {
     })
   },
   methods: {
-    addComment(){
+    addComment() {
       console.log('add comment')
+      const req = { post_id: this.$store.state.cs.post_id, user_name: this.user_name, content: this.new_comment }
+      API.SubmitComment(this, req)
     },
-    enterOnFocus(){
+    enterOnFocus() {
       console.log('Textfield enter on focus')
       this.dialogSubmit = true
     }
@@ -122,5 +124,6 @@ export default {
         </template>
       </v-list>
     </v-container>
-  </v-card>`
+  </v-card>
+`
 }
